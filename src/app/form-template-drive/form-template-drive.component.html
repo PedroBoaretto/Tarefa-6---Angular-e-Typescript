@@ -1,0 +1,31 @@
+<h1>Exemplo Formulario</h1>
+<form #form="ngForm" (submit)="onSubmit(form)">
+    <div>
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" name="nome" [(ngModel)]="nome" required />
+        <div ngIf="form.submitted && form.controls['nome'].errors" class="invalid-feedback">
+            <div>Nome Obrigatório</div>
+        </div>
+    </div>
+
+    <div>
+        <label for="email" class="form-label">email</label>
+        <input type="text" class="form-control" name="email" [(ngModel)]="email" required />
+        <div ngIf="form.submitted && form.controls['email'].errors" class="invalid-feedback">
+            <div>Email Obrigatorio</div>
+        </div>
+
+        <div ngIf="form.submitted && form.controls['email'].errors" class="invalid-feedback">
+            <div>Email fora do padrao</div>
+        </div>
+    </div>
+
+    <div>
+        <label for="senha" class="form-label">Senha</label>
+        <input type="text" class="form-control" name="senha" [(ngModel)]="senha" required />
+        <div ngIf="form.submitted && form.controls['senha'].errors" class="invalid-feedback">
+            <div>Senha</div>
+        </div>
+    </div>
+    <button class="btn btn-primary" type="submit">Salvar</button>
+</form>

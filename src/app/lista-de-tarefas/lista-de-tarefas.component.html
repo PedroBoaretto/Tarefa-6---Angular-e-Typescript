@@ -1,0 +1,7 @@
+<h1>Lista de Tarefas</h1>
+<ul>
+    <li class="tarefa" *ngFor="let tarefa of tarefas" [ngStyle]="{'text-decoration': tarefa.concluida ? 'line-through' : 'none'}">
+      {{ tarefa.descricao }}
+      <button (click)="concluirTarefa(tarefa)">Concluir</button>
+    </li>
+  </ul>
